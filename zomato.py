@@ -13,7 +13,7 @@ def score(site):
 	ls = []
 	num = []
 	add = []
-
+	#rate = []
 
 
 
@@ -33,8 +33,26 @@ def score(site):
 site = input("Paste the zomato page: Example>> https://www.zomato.com/city_name/restaurents/...<< URL+space : ")
 
 ls,num,add = score(site)
+
+f = open("record.txt","w")
+
+
+###
+
 for i in range(len(ls)):
 	print("Name : ",ls[i])
+	f.write(str("Name : ")+ls[i]+str("\n"))
 	print("Contact : ",num[i])
+	f.write(str("Contact : ")+num[i]+str("\n"))
 	print("Address : ",add[i])
-	print("------------------------------------------------------------------")
+	f.write(str("Address : ")+add[i]+str("\n"))
+	f.write(str("-"*2*len(max(add))))
+	f.write(str("\n"))
+	print("-"*2*len(max(add)))
+
+
+
+print(len(ls),len(num),len(add))
+
+
+
